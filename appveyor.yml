@@ -2,9 +2,9 @@ version: 7.1.0-{build}
 image: Visual Studio 2015
 build_script:
 - cmd: >-
-    dotnet restore -v Warning	
+    dotnet restore -v Warning
 
-    dotnet pack .\src\SapientGuardian.EntityFrameworkCore.MySql -o .\artifacts\SapientGuardian.EntityFrameworkCore.MySql -c Release
+    dotnet pack .\src\SapientGuardian.MySql.Data.EntityFrameworkCore -o .\artifacts\SapientGuardian.MySql.Data.EntityFrameworkCore -c Release
 artifacts:
 - path: 'artifacts\**\*.nupkg'
 deploy:

@@ -202,4 +202,4 @@ Report
 /Source/MySql.Data/.vscode
 /Source/MySql.Data/bin
 /Source/MySql.Data/project.lock.json
-/src/SapientGuardian.EntityFrameworkCore.MySql/project.lock.json
+project.lock.json

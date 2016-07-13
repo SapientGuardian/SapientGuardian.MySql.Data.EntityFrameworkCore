@@ -53,8 +53,8 @@ install:
 
   - FrameworkLibsMoniker="netstandard1.3"
 
-  # Build projects 
-  - dotnet build -c $Configuration -f $FrameworkLibsMoniker ./src/SapientGuardian.EntityFrameworkCore.MySql
+  # Build projects
+  - dotnet build -c $Configuration -f $FrameworkLibsMoniker ./src/SapientGuardian.MySql.Data.EntityFrameworkCore
 
 script:
   - echo "This would be a good time to run tests!"
