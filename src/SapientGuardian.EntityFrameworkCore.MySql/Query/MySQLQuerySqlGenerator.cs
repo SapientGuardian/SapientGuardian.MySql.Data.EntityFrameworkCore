@@ -32,8 +32,8 @@ namespace MySQL.Data.Entity.Query
 {
 	public class MySQLQuerySqlGenerator : DefaultQuerySqlGenerator
 	{
-		protected override string TypedFalseLiteral => "('0')";
-		protected override string TypedTrueLiteral => "('1')";
+		protected override string TypedFalseLiteral => "0";
+        protected override string TypedTrueLiteral => "1";
 
 		private MySQLTypeMapper _typeMapper;
 

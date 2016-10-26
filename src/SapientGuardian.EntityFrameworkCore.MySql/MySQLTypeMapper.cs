@@ -64,7 +64,9 @@ namespace MySQL.Data.Entity
 		private readonly RelationalTypeMapping _cast_signed = new RelationalTypeMapping("SIGNED", typeof(long));
 		private readonly RelationalTypeMapping _cast_unsigned = new RelationalTypeMapping("UNSIGNED", typeof(ulong));
 
-		private readonly Dictionary<string, RelationalTypeMapping> _storeTypeMappings;
+        private readonly RelationalTypeMapping _guid = new RelationalTypeMapping("varchar(40)", typeof(Guid), DbType.String, true, null);
+
+        private readonly Dictionary<string, RelationalTypeMapping> _storeTypeMappings;
 		private readonly Dictionary<Type, RelationalTypeMapping> _clrTypeMappings;
 		private readonly Dictionary<Type, RelationalTypeMapping> _clrCastTypeMappings;
 
@@ -112,8 +114,9 @@ namespace MySQL.Data.Entity
 				{ typeof(float), _real },
 				{ typeof(decimal), _decimal },
 				{ typeof(byte[]), _varbinary },
-				{ typeof(string), _varchar }
-			};
+				{ typeof(string), _varchar },
+                { typeof(Guid), _guid }
+            };
 
 			_clrCastTypeMappings = new Dictionary<Type, RelationalTypeMapping>
 			{
@@ -163,7 +166,12 @@ namespace MySQL.Data.Entity
 			if(property.ClrType == typeof(byte[]))
 				return _varbinary;
 
-			return base.FindCustomMapping(property);
+            if (property.ClrType == typeof(Guid))
+                return this._guid;
+
+
+
+            return base.FindCustomMapping(property);
 		}
 
 		public RelationalTypeMapping FindMappingForExplicitCast(Type clrType)

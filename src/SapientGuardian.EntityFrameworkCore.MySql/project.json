@@ -1,5 +1,5 @@
 {
-  "version": "7.1.9",
+  "version": "7.1.10-prerelease",
   "description": "MySQL database provider for Entity Framework Core.",
   "authors": [ "how02", "SapientGuardian" ],
   "buildOptions": {
