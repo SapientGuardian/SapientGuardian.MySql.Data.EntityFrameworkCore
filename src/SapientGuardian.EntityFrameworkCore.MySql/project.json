@@ -1,5 +1,5 @@
 {
-  "version": "7.1.19",
+  "version": "7.2.0",
   "description": "MySQL database provider for Entity Framework Core.",
   "authors": [ "how02", "SapientGuardian" ],
   "buildOptions": {
@@ -11,11 +11,11 @@
     "licenseUrl": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
   },
   "dependencies": {
-    "Microsoft.EntityFrameworkCore": "1.0.0",
-    "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
+    "Microsoft.EntityFrameworkCore": "1.1.0",
+    "Microsoft.EntityFrameworkCore.Relational": "1.1.0",
     "SapientGuardian.MySql.Data": "6.9.*",
-    "NETStandard.Library": "1.6.0",
-    "System.Linq": "4.1.0"
+    "NETStandard.Library": "1.6.1",
+    "System.Linq": "4.3.0"
   },
 
   "frameworks": {

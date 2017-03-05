@@ -1,14 +1,26 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace MySQL.Data.Entity
 {
-    public class MySQLConventionSetBuilder : IConventionSetBuilder
+    public class MySQLConventionSetBuilder : RelationalConventionSetBuilder
     {
-        public ConventionSet AddConventions(ConventionSet conventionSet)
+        public MySQLConventionSetBuilder(
+            IRelationalTypeMapper typeMapper,
+            ICurrentDbContext currentContext,
+            IDbSetFinder setFinder)
+            : base(typeMapper, currentContext, setFinder)
         {
-            ThrowIf.Argument.IsNull(conventionSet, "conventionSet");
+        }
 
+        public override ConventionSet AddConventions(ConventionSet conventionSet)
+        {
+            ThrowIf.Argument.IsNull(conventionSet, nameof(conventionSet));
+
+            base.AddConventions(conventionSet);
+            
             return conventionSet;
         }
     }
