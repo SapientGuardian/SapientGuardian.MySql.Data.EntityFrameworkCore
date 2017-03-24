@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>MySQL database provider for Entity Framework Core.</Description>
+    <VersionPrefix>7.1.21</VersionPrefix>
+    <Authors>how02;SapientGuardian</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>SapientGuardian.EntityFrameworkCore.MySql</AssemblyName>
+    <OutputType>Library</OutputType>
+    <PackageId>SapientGuardian.EntityFrameworkCore.MySql</PackageId>
+    <PackageTags>Entity;Framework;Core;entity-framework-core;EF;Data;O/RM;MySQL</PackageTags>
+    <PackageProjectUrl>https://github.com/SapientGuardian/SapientGuardian.EntityFrameworkCore.MySql</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</PackageLicenseUrl>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="1.0.3" />
+    <PackageReference Include="SapientGuardian.MySql.Data" Version="6.9.815" />
+    <PackageReference Include="System.Linq" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>
